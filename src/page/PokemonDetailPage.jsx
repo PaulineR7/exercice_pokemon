@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
+import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import './PokemonPage.scss'
+import Footer from "../components/Footer";
 
-function PokemonPage() {
+function PokemonDetailPage() {
     const pokemons = [
         {
           id: 1,
@@ -68,26 +67,26 @@ function PokemonPage() {
           img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png',
           isInTeam: true,
         },
-      ];
+    ];
+
+    const { id } = useParams();
+    console.log(id)
+
+    const pokemonId = pokemons.find((pokemon) => {
+        return pokemon.id == id;
+    })
+
 
     return(
         <>
         <Header />
-            <div className="flexpokemon">
-            {pokemons.map((pokemon) => {
-                return(
-                    <Link to={"/pokemon/" + pokemon.id + "/details"}>
-                        <article>
-                            <h2>{pokemon.name}</h2>
-                            <img src={pokemon.img} alt="" />
-                        </article>
-                    </Link>
-                )
-            })}
-            </div>
+        <article>
+            <h2>{pokemonId.name}</h2>
+            <img src={pokemonId.img} alt="" />
+        </article>
         <Footer />
         </>
     )
 }
 
-export default PokemonPage;
+export default PokemonDetailPage;
