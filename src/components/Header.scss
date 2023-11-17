@@ -1,0 +1,24 @@
+
+.flexnav {
+    display: flex;
+    background-color: red;
+}
+
+.flexlist {
+   list-style: none;
+   display: flex;
+   gap: 50px;
+   background-color: white;
+  
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.logo {
+    height: 100px;
+    margin-right: 300px;
+    
+}
