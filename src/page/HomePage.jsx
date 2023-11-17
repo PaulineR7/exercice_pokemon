@@ -1,6 +1,9 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { Link, useParams } from "react-router-dom";
+
 import './HomePage.scss'
+import TeamList from "./TeamList";
 
 function HomePage() {
 
@@ -89,6 +92,9 @@ function HomePage() {
                     )
                 })}
             </div>
+
+            
+            <TeamList />
 
             <Footer />
         </div>
